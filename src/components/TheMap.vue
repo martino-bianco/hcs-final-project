@@ -1,0 +1,126 @@
+<template>
+  <div id="map"></div>
+</template>
+
+<script>
+import mapboxgl from 'mapbox-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
+
+export default {
+  props: {
+    travelData: {
+      type: Object,
+      default: {}
+    }
+  },
+  mounted() {
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoibWFydGluLWJpYW5jbyIsImEiOiJjbGp2NDdlOG4xY3FiM2psbG0zMjZnOTY3In0.lGTYBbEfzfoLG_a1aHl5Zg' // Replace with your Mapbox access token
+
+    const map = new mapboxgl.Map({
+      container: 'map', // The ID of the map container in your template
+      style: 'mapbox://styles/mapbox/streets-v11',
+
+      center: [14.26812, 40.851799], // Initial map center (longitude, latitude)
+      zoom: 4
+    })
+
+    // Define marker coordinates and popup content
+    const markerData = [
+      {
+        coordinates: [16.871872, 41.117142], // Longitude and latitude of the marker's location
+        popupContent:
+          '<div id="popupContainer"><h3>Bari</h3><p>2022-07-01</p><p>Martino Bianco</p><p></p></div>'
+      },
+      {
+        coordinates: [14.26812, 40.851799], // Longitude and lati  tude of another location
+        popupContent:
+          '<div id="popupContainer"><h3>Napoli</h3><p>2022-07-01</p><p>Martino Bianco</p><p>LINK</p></div>'
+      },
+      {
+        coordinates: [12.496365, 41.902782], // Longitude and latitude of the marker's location
+        popupContent:
+          '<div id="popupContainer"><h3>Rome</h3><p>2022-07-01</p><p>Martino Bianco</p><p>LINK</p></div>'
+      },
+      {
+        coordinates: [11.255814, 43.769562], // Longitude and latitude of the marker's location
+        popupContent:
+          '<div id="popupContainer"><h3>Florence</h3><p>2022-07-01</p><p>Martino Bianco</p><p>LINK</p></div>'
+      },
+      {
+        coordinates: [9.33228, 46.153381], // Longitude and latitude of the marker's location
+        popupContent:
+          '<div id="popupContainer"><h3>Domaso</h3><p>2022-07-01</p><p>Martino Bianco</p><p>LINK</p></div>'
+      }
+
+      // Add more marker data as needed
+    ]
+
+    // Add markers and popups based on the markerData array
+    markerData.forEach((data) => {
+      const marker = new mapboxgl.Marker().setLngLat(data.coordinates).addTo(map)
+
+      const popup = new mapboxgl.Popup().setHTML(data.popupContent)
+
+      marker.setPopup(popup)
+    })
+  }
+}
+</script>
+
+<style>
+/* Marker tweaks */
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-popup-content {
+  padding: 0;
+  width: 180px;
+}
+
+.mapboxgl-popup-content h3 {
+  background: #000000;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: -15px;
+}
+
+.mapboxgl-popup-content h4 {
+  margin: 0;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.mapboxgl-popup-content div {
+  padding: 10px;
+}
+/* 
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+  margin-top: 15px;
+} */
+/* 
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+  border-bottom-color: #91c949;
+} */
+
+#map {
+  width: 100%;
+  height: 600px;
+  border-radius: 10px;
+}
+
+#popupContainer {
+  /* opacity: 0.7; */
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  border-radius: 10px;
+}
+
+#popupContainer h3 {
+  font-size: 20px;
+}
+</style>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "city": "Bari",
+    "country": "Italy",
+    "latitude": 41.117142,
+    "longitude": 16.871872,
+    "date": "2023-09-15",
+    "author": "Martino Bianco",
+    "authorpic": "/images/aboutme/focaccia_barese.jpeg",
+    "text": "blablablabla",
+    "image": "./images/bari/bari_tunnel.jpeg"
+  },
+  {
+    "id": 2,
+    "city": "Florence",
+    "country": "Italy",
+    "latitude": 43.769562,
+    "longitude": 11.255814,
+    "date": "2023-09-15",
+    "author": "Martino Bianco",
+    "authorpic": "/images/aboutme/focaccia_barese.jpeg",
+    "text": "blablablabla",
+    "image": "./images/firenze/firenze_roof.JPG"
+  },
+  {
+    "id": 3,
+    "city": "Rome",
+    "country": "Italy",
+    "latitude": 41.902782,
+    "longitude": 12.496365,
+    "date": "2019-04-13",
+    "author": "Martino Bianco",
+    "authorpic": "/images/aboutme/focaccia_barese.jpeg",
+    "text": "blablablabla",
+    "image": "./images/roma/rome_night_building.jpg"
+  },
+  {
+    "id": 4,
+    "city": "Napoli",
+    "country": "Italy",
+    "latitude": 40.851799,
+    "longitude": 14.26812,
+    "date": "2022-04-08",
+    "author": "Martino Bianco",
+    "authorpic": "/images/aboutme/focaccia_barese.jpeg",
+    "text": "blablablabla",
+    "image": "./images/napoli/napoli_stairs.JPG"
+  },
+  {
+    "id": 5,
+    "city": "Domaso",
+    "country": "Italy",
+    "latitude": 46.153381,
+    "longitude": 9.33228,
+    "date": "2022-03-10",
+    "author": "Martino Bianco",
+    "authorpic": "/images/aboutme/focaccia_barese.jpeg",
+    "text": "blablablabla",
+    "image": "./images/domaso/domaso_night.jpeg"
+  }
+]
