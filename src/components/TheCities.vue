@@ -27,7 +27,12 @@ export default {
       travelArray: []
     }
   },
+
   async mounted() {
+    const queryId = this.$route.params.id
+
+    console.log(queryId)
+
     const response = await fetch('http://localhost:5173/travels.json')
     const result = await response.json()
     console.log(result)
