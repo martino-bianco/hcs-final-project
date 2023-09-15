@@ -1,27 +1,25 @@
 <template>
-  <!-- <div id="cardContainer">
-    <TheCityTemplate
-      v-for="travelObject in travelArray"
-      :key="travelObject.id"
-      :travelData="travelObject"
-    />
-  </div> -->
-  <!-- <div>Hello!</div> -->
-  <!-- <div>{{ travelObject.name }}</div> -->
-  <!-- <div v-for="travelObject in travelArray" :key="travelObject.id">
-    {{ travelObject.city }}
-  </div> -->
-  <div v-if="travelArray.length > 0">
-    <div>{{ travelArray[0].city }}</div>
+  <div>
+    <TheMenuBar />
+    <div v-if="travelArray.length > 0">
+      <div v-for="travelObject in travelArray" :key="travelObject.id">
+        <div v-if="travelObject.id === +$route.params.id">
+          <!-- Convert id to number -->
+          <img :src="travelObject.image" alt="Image" style="width: 100%; height: auto" />
+          <h1>{{ travelObject.city }}</h1>
+          <h2>{{ travelObject.date }}</h2>
+          <div>{{ travelObject.text }}</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- <div>{{ travelArray[0].city }}</div> -->
 </template>
 
 <script>
-import TheCityTemplate from './TheCityTemplate.vue'
+// import TheCityTemplate from './TheCityTemplate.vue'
 
 export default {
-  components: { TheCityTemplate },
+  // components: { TheCityTemplate },
   data() {
     return {
       travelArray: []

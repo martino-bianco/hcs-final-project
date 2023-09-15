@@ -8,7 +8,7 @@
     "date": "2023-09-15",
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
-    "text": "blablablabla",
+    "text": "Bari lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "image": "./images/bari/bari_tunnel.jpeg"
   },
   {
@@ -20,7 +20,7 @@
     "date": "2023-09-15",
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
-    "text": "blablablabla",
+    "text": "FLorence lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "image": "./images/firenze/firenze_roof.JPG"
   },
   {
@@ -32,7 +32,7 @@
     "date": "2019-04-13",
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
-    "text": "blablablabla",
+    "text": "Rome lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "image": "./images/roma/rome_night_building.jpg"
   },
   {
@@ -44,7 +44,7 @@
     "date": "2022-04-08",
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
-    "text": "blablablabla",
+    "text": "Napoli lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "image": "./images/napoli/napoli_stairs.JPG"
   },
   {
@@ -56,7 +56,7 @@
     "date": "2022-03-10",
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
-    "text": "blablablabla",
+    "text": "Domaso lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "image": "./images/domaso/domaso_night.jpeg"
   }
 ]

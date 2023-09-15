@@ -98,14 +98,6 @@ export default {
 .mapboxgl-popup-content div {
   padding: 10px;
 }
-/* 
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
-  margin-top: 15px;
-} */
-/* 
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-  border-bottom-color: #91c949;
-} */
 
 #map {
   width: 100%;
@@ -114,7 +106,6 @@ export default {
 }
 
 #popupContainer {
-  /* opacity: 0.7; */
   background-color: rgb(255, 255, 255);
   width: 300px;
   border-radius: 10px;
