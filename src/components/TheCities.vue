@@ -1,11 +1,20 @@
 <template>
-  <div id="cardContainer">
+  <!-- <div id="cardContainer">
     <TheCityTemplate
       v-for="travelObject in travelArray"
       :key="travelObject.id"
       :travelData="travelObject"
     />
+  </div> -->
+  <!-- <div>Hello!</div> -->
+  <!-- <div>{{ travelObject.name }}</div> -->
+  <!-- <div v-for="travelObject in travelArray" :key="travelObject.id">
+    {{ travelObject.city }}
+  </div> -->
+  <div v-if="travelArray.length > 0">
+    <div>{{ travelArray[0].city }}</div>
   </div>
+  <!-- <div>{{ travelArray[0].city }}</div> -->
 </template>
 
 <script>
@@ -30,8 +39,7 @@ export default {
 <style scoped>
 #cardContainer {
   display: flex;
-  flex-wrap: wrap; /* Wrap items to the next row if they don't fit */
-  justify-content: space-between; /* Space between items */
-  /* You can adjust other CSS properties as needed for styling */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 </style>

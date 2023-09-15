@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/post/1',
       name: 'citydetails',
       component: () => import('../views/CityView.vue')
+    },
+    {
+      path: '/post/2',
+      name: 'city2',
+      component: () => import('../views/City2View.vue')
     }
   ]
 })

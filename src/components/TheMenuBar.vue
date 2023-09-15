@@ -39,9 +39,10 @@ export default {
 </script>
 
 <style scoped>
-/* * {
-  transition: all 0.3s ease-in-out;
-} */
+/* * { */
+/* font-size: 32px; */
+/* transition: all 0.3s ease-in-out; */
+/* } */
 
 .container {
   display: flex;
@@ -60,6 +61,7 @@ export default {
 .blog-name {
   margin-left: 40px;
   font-size: 20px;
+  font-size: 24px;
   /* margin-right: 20px; */
 }
 
