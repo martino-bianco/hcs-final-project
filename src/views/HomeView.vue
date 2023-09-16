@@ -1,5 +1,7 @@
 <template>
-  <TheMenuBar />
+  <div id="menuContainer" class="sticky-menu">
+    <TheMenuBar />
+  </div>
 
   <div id="container">
     <div id="leftColumn">
@@ -56,9 +58,17 @@ export default {
 /* The magical floating map */
 .map-container {
   position: sticky;
-  top: 40px;
+  top: 160px;
   width: 100%;
-  height: 600px;
+  height: -50px;
   z-index: 1;
+}
+
+/* Style for sticky menu */
+.sticky-menu {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Add your desired background color */
+  z-index: 2; /* Ensure the menu appears above the map */
 }
 </style>

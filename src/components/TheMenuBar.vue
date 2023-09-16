@@ -3,7 +3,7 @@
     <div class="logo">
       <i class="fa-solid fa-trailer fa-xl"></i><i class="fa-solid fa-van-shuttle fa-xl"></i>
 
-      <span class="blog-name"><router-link to="/">Martinos Boring Blog II</router-link></span>
+      <span class="blog-name"><router-link to="/">Il mio giro in italia</router-link></span>
     </div>
 
     <nav id="nav">

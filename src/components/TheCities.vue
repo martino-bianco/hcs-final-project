@@ -14,7 +14,9 @@
             </div>
           </div>
           <!-- Convert id to number -->
-          <img id="cityImage" :src="travelObject.image" alt="Image" />
+          <div id="cityImageContainer">
+            <img id="cityImage" :src="travelObject.image" alt="Image" class="centered-image" />
+          </div>
 
           <div id="cityText">{{ travelObject.text }}</div>
           <div id="whereDetails">{{ travelObject.city }}, {{ travelObject.country }}</div>
@@ -80,6 +82,25 @@ export default {
 }
 
 #cityImage {
-  width: 600px;
+  max-width: 500px; /* Ensure the image doesn't exceed its container's width */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px;
+}
+
+#cityText {
+  margin-top: 40px;
+}
+
+#cityText {
+  font-size: 24px;
+}
+
+#whereDetails {
+  font-size: 32px;
+  margin-top: 20px;
+}
+.centered-image {
+  display: block; /* Make the image a block-level element */
+  margin: 0 auto; /* Center the image horizontally within its container */
 }
 </style>

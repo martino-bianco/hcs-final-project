@@ -11,6 +11,7 @@
     <div id="rightColumn">
       <!-- Fixed map container -->
       <div class="map-container">
+        <!-- Aufgabe: -->
         <!-- <TheMap :travelArray="travelArray" /> -->
         <TheMap />
       </div>
@@ -52,7 +53,7 @@ export default { components: { TheMenuBar, TheCities, TheMap } }
 #rightColumn {
   flex: 1;
   padding: 16px;
-  height: 0px; /* Why does this solve my problem with the left? */
+  height: 1000px; /* Why does this solve my problem with the left? */
   margin-top: 40px;
   margin-left: 40px;
 }
