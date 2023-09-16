@@ -1,5 +1,5 @@
 <template>
-  <div id="menuContainer" class="sticky-menu">
+  <div id="menuContainer">
     <TheMenuBar />
   </div>
 
@@ -9,7 +9,7 @@
     </div>
     <div id="rightColumn">
       <!-- Fixed map container -->
-      <div class="map-container">
+      <div id="mapContainer">
         <!-- <TheMap :travelArray="travelArray" /> -->
         <TheMap />
       </div>
@@ -55,8 +55,8 @@ export default {
   margin-right: 40px;
 }
 
-/* The magical floating map */
-.map-container {
+/* The magical duo: floating map and menu */
+#mapContainer {
   position: sticky;
   top: 160px;
   width: 100%;
@@ -64,8 +64,7 @@ export default {
   z-index: 1;
 }
 
-/* Style for sticky menu */
-.sticky-menu {
+#menuContainer {
   position: sticky;
   top: 0;
   background-color: white; /* Add your desired background color */

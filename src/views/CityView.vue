@@ -1,5 +1,7 @@
 <template>
-  <TheMenuBar />
+  <div id="menuContainer">
+    <TheMenuBar />
+  </div>
   <div id="backLink">
     <router-link to="/"><i class="fa-solid fa-arrow-left fa-2xl"></i></router-link>
   </div>
@@ -10,7 +12,7 @@
     </div>
     <div id="rightColumn">
       <!-- Fixed map container -->
-      <div class="map-container">
+      <div id="mapContainer">
         <!-- Aufgabe: -->
         <!-- <TheMap :travelArray="travelArray" /> -->
         <TheMap />
@@ -57,11 +59,18 @@ export default { components: { TheMenuBar, TheCities, TheMap } }
   margin-top: 40px;
   margin-left: 40px;
 }
-.map-container {
+#mapContainer {
   position: sticky;
-  top: 40px;
+  top: 160px;
   width: 100%;
-  height: 600px;
+  height: -50px;
   z-index: 1;
+}
+
+#menuContainer {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Add your desired background color */
+  z-index: 2; /* Ensure the menu appears above the map */
 }
 </style>
