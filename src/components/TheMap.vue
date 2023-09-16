@@ -21,8 +21,8 @@ export default {
       container: 'map', // The ID of the map container in your template
       style: 'mapbox://styles/mapbox/streets-v11',
 
-      center: [14.26812, 40.851799], // Initial map center (longitude, latitude)
-      zoom: 4
+      center: [12.390828, 43.110717], // Initial map center (longitude, latitude)
+      zoom: 4.5
     })
 
     // Define marker coordinates and popup content
@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style>
-/* Marker tweaks */
+/* Marker */
 .mapboxgl-popup-close-button {
   display: none;
 }

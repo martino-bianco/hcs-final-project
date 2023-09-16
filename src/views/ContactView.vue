@@ -1,6 +1,7 @@
 <template>
   <div>
     <TheMenuBar />
+
     <TheContact />
   </div>
 </template>

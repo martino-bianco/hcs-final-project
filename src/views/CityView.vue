@@ -2,6 +2,9 @@
   <TheMenuBar />
   <div id="container">
     <div id="leftColumn">
+      <div>
+        <router-link to="/"><i class="fa-solid fa-arrow-left fa-2xl"></i></router-link>
+      </div>
       <TheCities />
     </div>
     <div id="rightColumn">
