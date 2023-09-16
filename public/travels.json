@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "title": "The two faces of Bari",
     "city": "Bari",
     "country": "Italy",
     "latitude": 41.117142,
@@ -9,10 +10,11 @@
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
     "text": "Bari lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-    "image": "./images/bari/bari_tunnel.jpeg"
+    "image": "/images/bari/bari_tunnel.jpeg"
   },
   {
     "id": 2,
+    "title": "Bistecca Fiorentina and Quesadillas",
     "city": "Florence",
     "country": "Italy",
     "latitude": 43.769562,
@@ -21,10 +23,11 @@
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
     "text": "FLorence lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-    "image": "./images/firenze/firenze_roof.JPG"
+    "image": "/images/firenze/firenze_roof.JPG"
   },
   {
     "id": 3,
+    "title": "A Date at Roma Termini",
     "city": "Rome",
     "country": "Italy",
     "latitude": 41.902782,
@@ -33,10 +36,11 @@
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
     "text": "Rome lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-    "image": "./images/roma/rome_night_building.jpg"
+    "image": "/images/roma/rome_night_building.jpg"
   },
   {
     "id": 4,
+    "title": "Where chaos is the attraction",
     "city": "Napoli",
     "country": "Italy",
     "latitude": 40.851799,
@@ -45,10 +49,11 @@
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
     "text": "Napoli lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-    "image": "./images/napoli/napoli_stairs.JPG"
+    "image": "/images/napoli/napoli_stairs.JPG"
   },
   {
     "id": 5,
+    "title": "Swimming with the fishes",
     "city": "Domaso",
     "country": "Italy",
     "latitude": 46.153381,
@@ -57,6 +62,6 @@
     "author": "Martino Bianco",
     "authorpic": "/images/aboutme/focaccia_barese.jpeg",
     "text": "Domaso lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-    "image": "./images/domaso/domaso_night.jpeg"
+    "image": "/images/domaso/domaso_night.jpeg"
   }
 ]

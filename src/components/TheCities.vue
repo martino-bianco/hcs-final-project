@@ -1,21 +1,22 @@
 <template>
-  <div>
+  <div id="cityContainer">
     <div v-if="travelArray.length > 0">
       <div v-for="travelObject in travelArray" :key="travelObject.id">
         <div v-if="travelObject.id === +$route.params.id">
-          <!-- Convert id to number -->
-          <img :src="travelObject.image" alt="Image" style="width: 100%; height: auto" />
-          <h1>{{ travelObject.city }}</h1>
+          <h1>{{ travelObject.title }}</h1>
           <div id="subline">
             <div id="date-author">
-              <span id="date">{{ travelObject.date }}</span>
+              <h2 id="date">{{ travelObject.date }}</h2>
               <div id="author">
                 <img id="headShot" :src="travelObject.authorpic" alt="" />
-                <p id="authorName">{{ travelObject.author }}</p>
+                <h2 id="authorName">{{ travelObject.author }}</h2>
               </div>
             </div>
           </div>
-          <div>{{ travelObject.text }}</div>
+          <!-- Convert id to number -->
+          <img id="cityImage" :src="travelObject.image" alt="Image" />
+
+          <div id="cityText">{{ travelObject.text }}</div>
           <div id="whereDetails">{{ travelObject.city }}, {{ travelObject.country }}</div>
         </div>
       </div>
@@ -47,11 +48,10 @@ export default {
 <style scoped>
 #subline {
   width: 100%;
-  /* background-color: aqua; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: 20px 0; */
+  margin-bottom: 10px;
 }
 
 #date-author {
@@ -61,10 +61,6 @@ export default {
   justify-content: space-between;
 }
 
-#date {
-  margin-right: 100px;
-}
-
 #author {
   display: flex;
   align-items: center;
@@ -72,7 +68,7 @@ export default {
 
 #authorName {
   margin: 0;
-  font-size: 16px;
+  margin-left: 20px;
   text-align: right;
 }
 
@@ -81,5 +77,9 @@ export default {
   height: 45px;
   border-radius: 50%;
   filter: grayscale(100%);
+}
+
+#cityImage {
+  width: 600px;
 }
 </style>

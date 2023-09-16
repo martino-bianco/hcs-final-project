@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <TheMenuBar />
-    <div id="container">
-      <div id="leftColumn">
-        <ThePreviewCards />
-      </div>
-      <div id="rightColumn">
-        <!-- Fixed map container -->
-        <div class="map-container">
-          <!-- <TheMap :travelArray="travelArray" /> -->
-          <TheMap />
-        </div>
+  <TheMenuBar />
+
+  <div id="container">
+    <div id="leftColumn">
+      <ThePreviewCards />
+    </div>
+    <div id="rightColumn">
+      <!-- Fixed map container -->
+      <div class="map-container">
+        <!-- <TheMap :travelArray="travelArray" /> -->
+        <TheMap />
       </div>
     </div>
   </div>
