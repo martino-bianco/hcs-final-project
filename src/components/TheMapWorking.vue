@@ -7,9 +7,6 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
-  props: {
-    singleCity: Object
-  },
   data() {
     return {
       travelData: []
@@ -51,13 +48,13 @@ export default {
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
         const popupContent = `
-          <div id="popupContainer">
-            <h3>${cityLink}</h3>
-            <p>${entry.date}</p>
-            <p>${entry.author}</p>
-
-          </div>
-        `
+            <div id="popupContainer">
+              <h3>${cityLink}</h3>
+              <p>${entry.date}</p>
+              <p>${entry.author}</p>
+              
+            </div>
+          `
         const popup = new mapboxgl.Popup().setHTML(popupContent)
         marker.setPopup(popup)
       })

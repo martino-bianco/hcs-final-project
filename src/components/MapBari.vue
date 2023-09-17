@@ -51,13 +51,13 @@ export default {
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
         const popupContent = `
-          <div id="popupContainer">
-            <h3>${cityLink}</h3>
-            <p>${entry.date}</p>
-            <p>${entry.author}</p>
-
-          </div>
-        `
+            <div id="popupContainer">
+              <h3>${cityLink}</h3>
+              <p>${entry.date}</p>
+              <p>${entry.author}</p>
+  
+            </div>
+          `
         const popup = new mapboxgl.Popup().setHTML(popupContent)
         marker.setPopup(popup)
       })

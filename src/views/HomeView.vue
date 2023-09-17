@@ -8,7 +8,6 @@
       <ThePreviewCards />
     </div>
     <div id="rightColumn">
-      <!-- Fixed map container -->
       <div id="mapContainer">
         <!-- <TheMap :travelArray="travelArray" /> -->
         <TheMap />
@@ -38,36 +37,4 @@ export default {
 }
 </script>
 
-<style scoped>
-#container {
-  display: flex;
-}
-
-#leftColumn {
-  flex: 1;
-  padding: 16px;
-}
-
-#rightColumn {
-  flex: 1;
-  padding: 16px;
-  margin-top: 40px;
-  margin-right: 40px;
-}
-
-/* The magical duo: floating map and menu */
-#mapContainer {
-  position: sticky;
-  top: 160px;
-  width: 100%;
-  height: -50px;
-  z-index: 1;
-}
-
-#menuContainer {
-  position: sticky;
-  top: 0;
-  background-color: white; /* Add your desired background color */
-  z-index: 2; /* Ensure the menu appears above the map */
-}
-</style>
+<style scoped></style>

@@ -14,18 +14,19 @@
       <div id="mapContainer">
         <!-- Aufgabe: -->
         <!-- <TheMap :travelArray="travelArray" /> -->
-        <TheMap />
+        <MapBari />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import MapBari from '../components/MapBari.vue'
 import TheCities from '../components/TheCities.vue'
-import TheMap from '../components/TheMap.vue'
+
 import TheMenuBar from '../components/TheMenuBar.vue'
 
-export default { components: { TheMenuBar, TheCities, TheMap } }
+export default { components: { TheMenuBar, TheCities, MapBari } }
 </script>
 
 <style scoped></style>
