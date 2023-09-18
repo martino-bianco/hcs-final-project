@@ -8,11 +8,12 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
   props: {
-    singleCity: Object
+    selectedCity: Object
   },
   data() {
     return {
-      travelData: []
+      travelData: [],
+      markers: []
     }
   },
   async mounted() {
@@ -28,7 +29,8 @@ export default {
       zoom: 4.5
     })
 
-    this.addMarkersToMap(map)
+    this.map = map // Store the map instance in a data property
+    this.addMarkersToMap(this.map) // Pass the map instance to the method
   },
   methods: {
     async fetchTravelData() {
@@ -44,28 +46,37 @@ export default {
     },
 
     addMarkersToMap(map) {
+      //   Good bye markers:
+      this.markers.forEach((marker) => {
+        marker.remove()
+      })
+
       this.travelData.forEach((entry) => {
-        const marker = new mapboxgl.Marker().setLngLat([entry.longitude, entry.latitude]).addTo(map)
+        if (this.selectedCity && entry.id === this.selectedCity.id) {
+          const marker = new mapboxgl.Marker()
+            .setLngLat([entry.longitude, entry.latitude])
+            .addTo(map)
 
-        // Create a link to the city page using its ID
-        const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
+          // Create a link to the city page using its ID
+          const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
-        const popupContent = `
-            <div id="popupContainer">
-              <h3>${cityLink}</h3>
-              <p>${entry.date}</p>
-              <p>${entry.author}</p>
-  
-            </div>
-          `
-        const popup = new mapboxgl.Popup().setHTML(popupContent)
-        marker.setPopup(popup)
+          const popupContent = `
+              <div id="popupContainer">
+                <h3>${cityLink}</h3>
+                <p>${entry.date}</p>
+                <p>${entry.author}</p>
+                <p><a id="cityLinkSmall" href="/post/${entry.id}">${entry.city}</a></p>
+              </div>
+            `
+
+          const popup = new mapboxgl.Popup().setHTML(popupContent)
+          marker.setPopup(popup)
+          this.markers.push(marker)
+        }
       })
     }
   }
 }
-// This belongs in the mapPopup:
-// <p id="headShot"> <img src="${entry.authorpic}" alt="Author image"></p>
 </script>
 
 <style>
@@ -103,6 +114,11 @@ export default {
   color: white;
   outline: none;
 }
+#cityLinkSmall {
+  color: black;
+  outline: none;
+}
+
 #map {
   width: 100%;
   height: 550px;

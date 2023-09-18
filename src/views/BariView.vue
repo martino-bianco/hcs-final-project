@@ -14,7 +14,7 @@
       <div id="mapContainer">
         <!-- Aufgabe: -->
         <!-- <TheMap :travelArray="travelArray" /> -->
-        <MapBari />
+        <MapBari :travelArray="selectedCity" />
       </div>
     </div>
   </div>

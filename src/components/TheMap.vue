@@ -7,9 +7,10 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
-  props: {
-    singleCity: Object
-  },
+  // Trying to make the map focus on one city:
+  // props: {
+  //   singleCity: Object
+  // },
   data() {
     return {
       travelData: []
@@ -41,6 +42,7 @@ export default {
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error.message)
       }
+      console.log(this.travelData)
     },
 
     addMarkersToMap(map) {
@@ -51,12 +53,16 @@ export default {
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
         const popupContent = `
-          <div id="popupContainer">
-            <h3>${cityLink}</h3>
-            <p>${entry.date}</p>
-            <p>${entry.author}</p>
-
-          </div>
+        
+            <div id="popupContainer">
+              <h3>${cityLink}</h3>
+              <p>${entry.date}</p>
+              <p>${entry.author}</p>
+              <p><a id="cityLinkSmall" href="/post/${entry.id}">${entry.city}</a></p>
+            
+  
+            </div>
+          
         `
         const popup = new mapboxgl.Popup().setHTML(popupContent)
         marker.setPopup(popup)
@@ -103,6 +109,11 @@ export default {
   color: white;
   outline: none;
 }
+#cityLinkSmall {
+  color: black;
+  outline: none;
+}
+
 #map {
   width: 100%;
   height: 550px;
