@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="'/post/' + travelData.id" id="TheCard">
+  <router-link :to="'/post/' + travelData.id" id="TheCard" class="tilted">
     <div class="image-container">
       <img
         id="topImage"
@@ -22,12 +22,6 @@
 <script>
 import { RouterLink } from 'vue-router'
 
-// The Import, but i don't find the path:
-// import travelData from '.../public/travels.json'
-// Helder says: it.s in the public folder so wee need to do a fetch, itös a dumb static rest api
-
-// Does the export belong here at all?
-// helder sazs: yes
 export default {
   props: {
     travelData: {
@@ -46,18 +40,21 @@ export default {
   align-items: center;
   justify-content: center;
   width: 200px;
-  /* background-color: red; */
-  /* POLAROID EFFECT: */
   padding: 20px;
   margin: 40px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  /* transition: */
-  transition: transform 0.3s;
+  transition:
+    transform 0.5s,
+    filter 1s; /* Add a smooth transition effect to transform */
 }
-/* transition: */
-#TheCard:hover {
+
+#TheCard.tilted {
   transform: scale(0.9) rotate(-5deg);
+}
+
+#TheCard:hover {
+  transform: none; /* Remove the tilt effect on hover */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 

@@ -1,15 +1,12 @@
 <template>
   <div id="cardContainer">
-    <!-- v-for -->
-    <!-- <TheCardTemplate :travelData="travelArray[0]" />
-    <TheCardTemplate :travelData="travelArray[1]" />
-    <TheCardTemplate :travelData="travelArray[2]" />
-    <TheCardTemplate :travelData="travelArray[3]" /> -->
-
     <TheCardTemplate
       v-for="travelObject in travelArray"
       :key="travelObject.id"
       :travelData="travelObject"
+      @mouseover="handleMouseOver(travelObject.id)"
+      @mouseout="handleMouseOut()"
+      :style="{ filter: travelObject.isHovered ? 'blur(0)' : 'blur(2px)' }"
     />
   </div>
 </template>
@@ -24,6 +21,23 @@ export default {
       travelArray: []
     }
   },
+  methods: {
+    handleMouseOver(cardId) {
+      this.travelArray.forEach((travelObject) => {
+        if (travelObject.id === cardId) {
+          travelObject.isHovered = true
+        } else {
+          travelObject.isHovered = false
+        }
+      })
+    },
+    handleMouseOut() {
+      // Set isHovered to false for all cards when mouseout
+      this.travelArray.forEach((travelObject) => {
+        travelObject.isHovered = false
+      })
+    }
+  },
   async mounted() {
     const response = await fetch('http://localhost:5173/travels.json')
     const result = await response.json()
@@ -34,6 +48,11 @@ export default {
 
       return dateB - dateA
     })
+
+    // Initialize isHovered property to false for all cards
+    this.travelArray.forEach((travelObject) => {
+      travelObject.isHovered = false
+    })
   }
 }
 </script>
@@ -41,8 +60,7 @@ export default {
 <style scoped>
 #cardContainer {
   display: flex;
-  flex-wrap: wrap; /* Wrap items to the next row if they don't fit */
-  justify-content: space-between; /* Space between items */
-  /* You can adjust other CSS properties as needed for styling */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 </style>
