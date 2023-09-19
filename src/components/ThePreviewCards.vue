@@ -6,7 +6,7 @@
       :travelData="travelObject"
       @mouseover="handleMouseOver(travelObject.id)"
       @mouseout="handleMouseOut()"
-      :style="{ filter: travelObject.isHovered ? 'blur(0)' : 'blur(2px)' }"
+      :style="{ filter: travelObject.isHovered ? 'blur(0)' : 'blur(5px)' }"
     />
   </div>
 </template>

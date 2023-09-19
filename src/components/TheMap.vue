@@ -62,11 +62,11 @@ export default {
 
             <div id="popupContainer">
               <h3>${cityLink}</h3>
-              <p>Date: ${entry.date}</p>
-              <p>Author: ${entry.author}</p>
-              
+              <div>Date:<br>${entry.date}</div>
+              <div id=author>
+              <p>Author:<br>${entry.author}</p>
               <img id="headShot" src="${entry.authorpic}" alt="Author image">
-
+</div>
 
             </div>
 
@@ -87,7 +87,7 @@ export default {
 
 .mapboxgl-popup-content {
   background-color: rgba(255, 255, 255, 0.8);
-  width: 300px;
+  width: 250px;
   border-radius: 10px;
 }
 
@@ -115,10 +115,6 @@ export default {
   color: white;
   outline: none;
 }
-#cityLinkSmall {
-  color: black;
-  outline: none;
-}
 
 #map {
   width: 100%;
@@ -129,6 +125,11 @@ export default {
 #popupContainer h3 {
   font-size: 20px;
 }
+#author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #headShot {
   width: 45px !important;
   height: 45px !important;
@@ -136,7 +137,7 @@ export default {
   text-align: left;
   filter: grayscale(100%);
 }
-p {
+div {
   font-size: 16px;
 }
 </style>
