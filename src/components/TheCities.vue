@@ -1,6 +1,10 @@
 <template>
   <div id="cityContainer">
     <div v-if="travelArray.length > 0">
+      <!-- since the travelArraz prop now onlz was 1 element because of the filter in the parentComponent
+            the for loop onlz runs once
+          and the if will alwazs be true
+        TODO: improve this later -->
       <div v-for="travelObject in travelArray" :key="travelObject.id">
         <div v-if="travelObject.id === +$route.params.id">
           <h1>{{ travelObject.title }}</h1>
@@ -28,21 +32,8 @@
 
 <script>
 export default {
-  data() {
-    return {
-      travelArray: []
-    }
-  },
-
-  async mounted() {
-    const queryId = this.$route.params.id
-
-    console.log(queryId)
-
-    const response = await fetch('http://localhost:5173/travels.json')
-    const result = await response.json()
-    console.log(result)
-    this.travelArray = result
+  props: {
+    travelArray: Array
   }
 }
 </script>

@@ -9,8 +9,7 @@
     </div>
     <div id="rightColumn">
       <div id="mapContainer">
-        <!-- <TheMap :travelArray="travelArray" /> -->
-        <TheMap />
+        <TheMap :travelData="travelArray" />
       </div>
     </div>
   </div>

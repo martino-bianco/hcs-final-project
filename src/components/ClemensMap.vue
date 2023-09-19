@@ -8,50 +8,44 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
   // Trying to make the map focus on one city:
-  props: {
-    travelData: Array,
-    zoom: {
-      required: false,
-      type: Number,
-      default: 4.5
-    },
-    center: {
-      required: false,
-      type: Array,
-      default() {
-        return [12.390828, 43.110717]
-      }
-    }
-  },
+  // props: {
+  //   singleCity: Object
+  // },
   data() {
     return {
-      map: null
+      travelData: []
     }
   },
   async mounted() {
+    await this.fetchTravelData()
+
     mapboxgl.accessToken =
       'pk.eyJ1IjoibWFydGluLWJpYW5jbyIsImEiOiJjbGp2NDdlOG4xY3FiM2psbG0zMjZnOTY3In0.lGTYBbEfzfoLG_a1aHl5Zg' // Replace with your Mapbox access token
-    this.map = new mapboxgl.Map({
+
+    const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: this.center,
-      zoom: this.zoom
+      center: [12.390828, 43.110717],
+      zoom: 4.5
     })
-  },
-  watch: {
-    travelData() {
-      console.log(this.travelData)
-      this.addMarkersToMap(this.map)
-    },
-    center() {
-      this.map.flyTo({
-        center: this.center
-      })
-    }
+
+    this.addMarkersToMap(map)
   },
   methods: {
-    addMarkersToMap(map) {
+    async fetchTravelData() {
+      try {
+        const response = await fetch('/travels.json')
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+        this.travelData = await response.json()
+      } catch (error) {
+        console.error('There was a problem with the fetch operation:', error.message)
+      }
       console.log(this.travelData)
+    },
+
+    addMarkersToMap(map) {
       this.travelData.forEach((entry) => {
         const marker = new mapboxgl.Marker().setLngLat([entry.longitude, entry.latitude]).addTo(map)
 
@@ -59,24 +53,25 @@ export default {
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
         const popupContent = `
-
-            <div id="popupContainer">
-              <h3>${cityLink}</h3>
-              <p>Date: ${entry.date}</p>
-              <p>Author: ${entry.author}</p>
+          
+              <div id="popupContainer">
+                <h3>${cityLink}</h3>
+                <p>Date: ${entry.date}</p>
+                <p>Author: ${entry.author}</p>
+                <p><a id="cityLinkSmall" href="/post/${entry.id}">${entry.city}</a></p>
               
-              <img id="headShot" src="${entry.authorpic}" alt="Author image">
-
-
-            </div>
-
-        `
+    
+              </div>
+            
+          `
         const popup = new mapboxgl.Popup().setHTML(popupContent)
         marker.setPopup(popup)
       })
     }
   }
 }
+// This belongs in the mapPopup:
+// <p id="headShot"> <img src="${entry.authorpic}" alt="Author image"></p>
 </script>
 
 <style>
@@ -86,13 +81,12 @@ export default {
 }
 
 .mapboxgl-popup-content {
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 300px;
-  border-radius: 10px;
+  padding: 0;
+  width: 180px;
 }
 
 .mapboxgl-popup-content h3 {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: #000000;
   color: #fff;
   margin: 0;
   padding: 10px;
@@ -123,6 +117,12 @@ export default {
 #map {
   width: 100%;
   height: 550px;
+  border-radius: 10px;
+}
+
+#popupContainer {
+  background-color: rgb(255, 255, 255);
+  width: 300px;
   border-radius: 10px;
 }
 
