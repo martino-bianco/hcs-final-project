@@ -54,7 +54,7 @@ a {
 }
 
 #HCSContainer {
-  font-size: 55px;
+  font-size: 50px;
 }
 
 #myName {
@@ -67,9 +67,13 @@ a {
 #theLogos {
   margin-top: 20px;
   margin: 40px;
+  font-size: larger;
 }
 
 #HCSContainer {
   margin: 30px;
+}
+#explanation {
+  font-size: 28px;
 }
 </style>

@@ -14,6 +14,6 @@ export default { components: { TheMenuBar, TheContact } }
 </script>
 <style scoped>
 #contactContainer {
-  margin: 130px;
+  margin-top: 130px;
 }
 </style>
