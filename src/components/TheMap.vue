@@ -56,8 +56,8 @@ export default {
         
             <div id="popupContainer">
               <h3>${cityLink}</h3>
-              <p>${entry.date}</p>
-              <p>${entry.author}</p>
+              <p>Date: ${entry.date}</p>
+              <p>Author: ${entry.author}</p>
               <p><a id="cityLinkSmall" href="/post/${entry.id}">${entry.city}</a></p>
             
   
@@ -135,5 +135,8 @@ export default {
   border-radius: 50%;
   text-align: left;
   filter: grayscale(100%);
+}
+p {
+  font-size: 16px;
 }
 </style>
