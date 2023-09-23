@@ -1,14 +1,14 @@
 <template>
-  <div id="menuContainer">
+  <div id="menuContainer" :class="{ blurry: menuBlur }">
     <TheMenuBar />
   </div>
 
   <div id="container">
-    <div id="leftColumn">
+    <div id="leftColumn1">
       <ThePreviewCards />
     </div>
     <div id="rightColumn">
-      <div id="mapContainer">
+      <div id="mapContainer" :class="{ blurry: mapBlur }">
         <TheMap :travelData="travelArray" />
       </div>
     </div>
@@ -24,16 +24,38 @@ export default {
   components: { TheMenuBar, ThePreviewCards, TheMap },
   data() {
     return {
-      travelArray: [] // Initialize travelArray with your JSON data here
+      travelArray: [],
+      menuBlur: true,
+      mapBlur: true
     }
   },
   async mounted() {
-    // Fetch your JSON data and set it to travelArray
     const response = await fetch('http://localhost:5173/travels.json')
     const result = await response.json()
     this.travelArray = result
+
+    // MenuBlur
+    setTimeout(() => {
+      this.menuBlur = false
+    }, 1500)
+
+    // MapBlur:
+    setTimeout(() => {
+      this.mapBlur = false
+    }, 3000)
   }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#menuContainer,
+#mapContainer {
+  filter: blur(10px);
+  transition: filter 1s ease;
+}
+
+#menuContainer:not(.blurry),
+#mapContainer:not(.blurry) {
+  filter: blur(0);
+}
+</style>

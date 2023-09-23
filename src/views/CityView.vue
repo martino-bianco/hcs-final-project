@@ -11,10 +11,8 @@
       <TheCities :travelArray="travelArray" />
     </div>
     <div id="rightColumn">
-      <div id="mapContainer">
-        <!-- Toggle: TheMap oder SingleCityMap -->
+      <div id="mapContainer" class="scroll-container">
         <TheMap :travelData="travelArray" :center="center" :zoom="9" />
-        <!-- <SingleCityMap :selectedCity="selectedCity" /> -->
       </div>
     </div>
   </div>
@@ -45,7 +43,7 @@ export default {
     const paramId = this.$route.params.id
 
     // filter by ID
-    // travelArraz will still be an array but with onl 1 object, the object that matches the route param ID
+    // travelArraz will still be an array but with only 1 object, the object that matches the route param ID
     this.travelArray = result.filter(function (value) {
       if (value.id == paramId) {
         return true
@@ -64,4 +62,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.scroll-container {
+  height: 600px; /* Set the desired height for the scrollable container */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+</style>

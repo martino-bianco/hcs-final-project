@@ -7,10 +7,6 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
-  // Trying to make the map focus on one city:
-  // props: {
-  //   singleCity: Object
-  // },
   data() {
     return {
       travelData: []
@@ -49,7 +45,6 @@ export default {
       this.travelData.forEach((entry) => {
         const marker = new mapboxgl.Marker().setLngLat([entry.longitude, entry.latitude]).addTo(map)
 
-        // Create a link to the city page using its ID
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
         const popupContent = `
@@ -70,12 +65,9 @@ export default {
     }
   }
 }
-// This belongs in the mapPopup:
-// <p id="headShot"> <img src="${entry.authorpic}" alt="Author image"></p>
 </script>
 
 <style>
-/* Marker */
 .mapboxgl-popup-close-button {
   display: none;
 }

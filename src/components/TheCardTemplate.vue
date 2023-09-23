@@ -46,12 +46,12 @@ export default {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition:
     transform 0.6s,
-    filter 3s; /* Add a smooth transition effect to transform */
+    filter 3s;
 }
 
-#TheCard.tilted {
+/* #TheCard.tilted {
   transform: scale(0.9) rotate(-90deg);
-}
+} */
 
 #TheCard:hover {
   transform: none; /* Remove the tilt effect on hover */

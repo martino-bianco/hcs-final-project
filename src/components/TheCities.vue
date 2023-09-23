@@ -17,7 +17,7 @@
               </div>
             </div>
           </div>
-          <!-- Convert id to number -->
+
           <div id="cityImageContainer">
             <img id="cityImage" :src="travelObject.image" alt="Image" class="centered-image" />
           </div>
@@ -73,8 +73,8 @@ export default {
 }
 
 #cityImage {
-  max-width: 500px; /* Ensure the image doesn't exceed its container's width */
-  height: auto; /* Maintain the aspect ratio */
+  max-width: 500px;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -91,7 +91,7 @@ export default {
   margin-top: 20px;
 }
 .centered-image {
-  display: block; /* Make the image a block-level element */
-  margin: 0 auto; /* Center the image horizontally within its container */
+  display: block;
+  margin: 0 auto;
 }
 </style>
