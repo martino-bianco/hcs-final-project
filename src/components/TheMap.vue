@@ -7,7 +7,6 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
-  // Trying to make the map focus on one city:
   props: {
     travelData: Array,
     zoom: {
@@ -25,22 +24,40 @@ export default {
   },
   data() {
     return {
-      map: null
+      map: null,
+      initialZoomComplete: false
     }
   },
   async mounted() {
     mapboxgl.accessToken =
       'pk.eyJ1IjoibWFydGluLWJpYW5jbyIsImEiOiJjbGp2NDdlOG4xY3FiM2psbG0zMjZnOTY3In0.lGTYBbEfzfoLG_a1aHl5Zg' // Replace with your Mapbox access token
+
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
       center: this.center,
-      zoom: this.zoom
+      zoom: 0
     })
+
+    this.map.on('load', () => {
+      if (!this.initialZoomComplete) {
+        setTimeout(() => {
+          this.map.flyTo({
+            center: this.center,
+            zoom: this.zoom,
+            essential: true,
+            duration: 5000
+          })
+          this.initialZoomComplete = true
+        })
+      }
+    })
+
+    this.addMarkersToMap(this.map)
   },
+
   watch: {
     travelData() {
-      console.log(this.travelData)
       this.addMarkersToMap(this.map)
     },
     center() {
@@ -49,28 +66,25 @@ export default {
       })
     }
   },
+
   methods: {
     addMarkersToMap(map) {
-      console.log(this.travelData)
       this.travelData.forEach((entry) => {
         const marker = new mapboxgl.Marker().setLngLat([entry.longitude, entry.latitude]).addTo(map)
 
-        // Create a link to the city page using its ID
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
         const popupContent = `
-
-            <div id="popupContainer">
-              <h3>${cityLink}</h3>
-              <div>Date:<br>${entry.date}</div>
-              <div id=author>
+          <div id="popupContainer">
+            <h3>${cityLink}</h3>
+            <div>Date:<br>${entry.date}</div>
+            <div id=author>
               <p>Author:<br>${entry.author}</p>
               <img id="headShot" src="${entry.authorpic}" alt="Author image">
-</div>
-
             </div>
-
+          </div>
         `
+
         const popup = new mapboxgl.Popup().setHTML(popupContent)
         marker.setPopup(popup)
       })
@@ -80,7 +94,6 @@ export default {
 </script>
 
 <style>
-/* Marker */
 .mapboxgl-popup-close-button {
   display: none;
 }
@@ -125,11 +138,13 @@ export default {
 #popupContainer h3 {
   font-size: 20px;
 }
+
 #author {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 #headShot {
   width: 45px !important;
   height: 45px !important;
@@ -137,6 +152,7 @@ export default {
   text-align: left;
   filter: grayscale(100%);
 }
+
 div {
   font-size: 16px;
 }
