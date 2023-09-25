@@ -35,13 +35,14 @@ a {
   background-color: white;
   z-index: 2;
 }
-
+/* 
 #container {
   display: flex;
 }
 
 #leftColumn {
   flex: 1;
+  height: 200px;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -49,17 +50,14 @@ a {
   width: 500px;
   margin-top: 100px;
   border-radius: 10px;
-  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
-  min-height: 0; /* Add this to reset the min-height */
 }
 
 #rightColumn {
   flex: 1;
   padding: 16px;
-  height: 10000px; /* Why does this solve my problem with the left? */
-  margin-top: 40px;
-  margin-left: 40px;
-  margin-right: 40px;
+  position: sticky;
+  top: 160px; 
+  z-index: 1;
 }
 
 #leftColumn1 {
@@ -72,15 +70,12 @@ a {
   width: 500px;
   margin-top: 100px;
   border-radius: 10px;
-  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
-  min-height: 0; /* Add this to reset the min-height */
 }
 
 #rightColumn1 {
   flex: 1;
   padding: 16px;
-  height: 10000px; /* Why does this solve my problem with the left? */
-  margin-top: 40px;
-  margin-left: 40px;
-  margin-right: 40px;
-}
+  position: sticky;
+  top: 160px; 
+  z-index: 1;
+} */

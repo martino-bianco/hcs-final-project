@@ -1,18 +1,19 @@
 <template>
-  <div id="menuContainer">
-    <TheMenuBar />
-  </div>
-  <div id="backLink">
-    <router-link to="/"><i class="fa-solid fa-arrow-left fa-2xl"></i></router-link>
-  </div>
-
-  <div id="container">
-    <div id="leftColumn">
-      <TheCities :travelArray="travelArray" />
+  <div id="app">
+    <div id="menuContainer">
+      <TheMenuBar />
     </div>
-    <div id="rightColumn">
-      <div id="mapContainer" class="scroll-container">
-        <TheMap :travelData="travelArray" :center="center" :zoom="9" />
+    <div id="backLink">
+      <router-link to="/"><i class="fa-solid fa-arrow-left fa-2xl"></i></router-link>
+    </div>
+    <div id="container">
+      <div id="leftColumn" class="scroll-container">
+        <TheCities :travelArray="travelArray" />
+      </div>
+      <div id="rightColumn">
+        <div id="mapContainer">
+          <TheMap :travelData="travelArray" :center="center" :zoom="9" />
+        </div>
       </div>
     </div>
   </div>
@@ -28,22 +29,18 @@ export default {
     return {
       center: [12.390828, 43.110717],
       travelArray: [],
-      selectedCity: {} // Define selectedCity with initial values or an empty object
+      selectedCity: {}
     }
   },
   async mounted() {
-    const queryId = this.$route.params.id
-
-    console.log(queryId)
+    //  Why did we have this in the first place? It works fine without (i guess 😅):
+    //const queryId = this.$route.params.id
 
     const response = await fetch('http://localhost:5173/travels.json')
     const result = await response.json()
-    console.log(result)
 
     const paramId = this.$route.params.id
 
-    // filter by ID
-    // travelArraz will still be an array but with only 1 object, the object that matches the route param ID
     this.travelArray = result.filter(function (value) {
       if (value.id == paramId) {
         return true
@@ -54,17 +51,56 @@ export default {
     const longitude = this.travelArray[0].longitude
     const latitude = this.travelArray[0].latitude
     this.center = [longitude, latitude]
-    console.log('------------')
-    console.log(this.travelArray)
-    console.log(this.center)
   },
   components: { TheMenuBar, TheCities, TheMap }
 }
 </script>
 
 <style scoped>
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+#leftColumn {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  overflow-y: auto;
+  margin-top: 120px;
+}
 .scroll-container {
-  height: 600px; /* Set the desired height for the scrollable container */
-  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 100%;
+  scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+#rightColumn {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mapContainer {
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 </style>

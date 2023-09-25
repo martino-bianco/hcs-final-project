@@ -34,12 +34,12 @@ export default {
     const result = await response.json()
     this.travelArray = result
 
-    // MenuBlur
+    // Menu unblurrs timer:
     setTimeout(() => {
       this.menuBlur = false
     }, 1500)
 
-    // MapBlur:
+    // Map unblurrs timer:
     setTimeout(() => {
       this.mapBlur = false
     }, 3000)
@@ -48,6 +48,53 @@ export default {
 </script>
 
 <style scoped>
+#container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#leftColumn1 {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin-top: 100px;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
+}
+
+/* Removing scroll bars i guess */
+#leftColumn1::-webkit-scrollbar,
+#mapContainer::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+#leftColumn1 {
+  scrollbar-width: none;
+}
+
+#rightColumn {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#mapContainer {
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  margin-top: 70px;
+}
+
 #menuContainer,
 #mapContainer {
   filter: blur(10px);
