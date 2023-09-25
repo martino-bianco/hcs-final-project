@@ -12,7 +12,7 @@
       </div>
       <div id="rightColumn">
         <div id="mapContainer">
-          <TheMap :travelData="travelArray" :center="center" :zoom="9" />
+          <TheMap :travelData="travelArray" :center="center" :zoom="9" :initialZoom="12" />
         </div>
       </div>
     </div>
@@ -33,9 +33,6 @@ export default {
     }
   },
   async mounted() {
-    //  Why did we have this in the first place? It works fine without (i guess 😅):
-    //const queryId = this.$route.params.id
-
     const response = await fetch('http://localhost:5173/travels.json')
     const result = await response.json()
 

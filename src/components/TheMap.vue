@@ -20,6 +20,11 @@ export default {
       default() {
         return [12.390828, 43.110717]
       }
+    },
+    initialZoom: {
+      required: false,
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -36,7 +41,7 @@ export default {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
       center: this.center,
-      zoom: 0
+      zoom: this.initialZoom || 0 // Use the provided initialZoom if available, otherwise, use 0
     })
 
     this.map.on('load', () => {
