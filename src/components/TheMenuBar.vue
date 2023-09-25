@@ -8,7 +8,7 @@
       </router-link>
     </div>
 
-    <!-- Language Switcher Thingie -->
+    <!-- My weak Language Switcher Thingie -->
     <nav id="nav">
       <ul>
         <li class="contact">
