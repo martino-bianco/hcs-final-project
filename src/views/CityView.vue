@@ -12,7 +12,7 @@
       </div>
       <div id="rightColumn">
         <div id="mapContainer">
-          <TheMap :travelData="travelArray" :center="center" :zoom="9" :initialZoom="12" />
+          <TheMap :travelData="travelArray" :center="center" :zoom="9" :initialZoom="4.5" />
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@ import TheMenuBar from '../components/TheMenuBar.vue'
 export default {
   data() {
     return {
-      center: [12.390828, 43.110717],
+      center: [12.948895586334427, 41.966501605840534],
       travelArray: [],
       selectedCity: {}
     }

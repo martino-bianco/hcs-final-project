@@ -18,7 +18,7 @@ export default {
       required: false,
       type: Array,
       default() {
-        return [12.390828, 43.110717]
+        return [12.948895586334427, 41.966501605840534]
       }
     },
     initialZoom: {

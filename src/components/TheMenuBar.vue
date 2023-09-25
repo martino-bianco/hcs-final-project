@@ -11,7 +11,7 @@
     <!-- Language Switcher Thingie -->
     <nav id="nav">
       <ul>
-        <li>
+        <li class="contact">
           <router-link to="/contact">{{ $t('contact') }}</router-link>
         </li>
         <li>
@@ -56,7 +56,7 @@ export default {
     },
     changeLanguage(event) {
       const selectedLanguage = event.target.value
-      // Change the locale to the selected language
+      // This should change the locale to the selected language
       this.$i18n.locale = selectedLanguage
     }
   }
@@ -83,6 +83,10 @@ export default {
   font-size: 24px;
 }
 
+.contact {
+  margin-right: 60px;
+}
+
 .language-switcher select {
   font-size: 16px;
 }
@@ -94,7 +98,7 @@ ul {
 
 ul li {
   display: inline;
-  margin-right: 20px; /* Adjust the margin as needed */
+  margin-right: 20px;
   font-size: 20px;
   font-weight: bold;
 }
@@ -102,12 +106,7 @@ ul li {
 button {
   cursor: pointer;
   font-size: 15px;
-  min-width: 120px; /* Set a fixed width for the button */
+  min-width: 120px;
   min-height: 20px;
 }
-
-/* Adjust the position of the Contact link */
-/* li:nth-child(1) {
-  margin-right: 60px; 
-} */
 </style>
