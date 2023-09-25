@@ -1,31 +1,25 @@
 <template>
   <div id="cityContainer">
-    <div v-if="travelArray.length > 0">
-      <!-- since the travelArraz prop now onlz was 1 element because of the filter in the parentComponent
-            the for loop onlz runs once
-          and the if will alwazs be true
-        TODO: improve this later -->
-      <div v-for="travelObject in travelArray" :key="travelObject.id">
-        <div v-if="travelObject.id === +$route.params.id">
-          <h1>{{ travelObject.title }}</h1>
-          <div id="subline">
-            <div id="date-author">
-              <h2 id="date">{{ travelObject.date }}</h2>
-              <div id="author">
-                <img id="headShot" :src="travelObject.authorpic" alt="" />
-                <h2 id="authorName">{{ travelObject.author }}</h2>
-              </div>
+    <div v-if="travelObject">
+      <h1>{{ travelObject.title }}</h1>
+      <div id="subline">
+        <div id="date-author">
+          <h2 id="date">{{ travelObject.date }}</h2>
+          <router-link to="/contact">
+            <div id="author">
+              <img id="headShot" :src="travelObject.authorpic" alt="" />
+              <h2 id="authorName">{{ travelObject.author }}</h2>
             </div>
-          </div>
-
-          <div id="cityImageContainer">
-            <img id="cityImage" :src="travelObject.image" alt="Image" class="centered-image" />
-          </div>
-
-          <div id="cityText">{{ travelObject.text }}</div>
-          <div id="whereDetails">{{ travelObject.city }}, {{ travelObject.country }}</div>
+          </router-link>
         </div>
       </div>
+
+      <div id="cityImageContainer">
+        <img id="cityImage" :src="travelObject.image" alt="Image" class="centered-image" />
+      </div>
+
+      <div id="cityText">{{ travelObject.text }}</div>
+      <div id="whereDetails">{{ travelObject.city }}, {{ travelObject.country }}</div>
     </div>
   </div>
 </template>
@@ -34,6 +28,12 @@
 export default {
   props: {
     travelArray: Array
+  },
+  computed: {
+    travelObject() {
+      const paramId = +this.$route.params.id
+      return this.travelArray.find((travelObject) => travelObject.id === paramId)
+    }
   }
 }
 </script>
@@ -80,9 +80,6 @@ export default {
 
 #cityText {
   margin-top: 40px;
-}
-
-#cityText {
   font-size: 24px;
 }
 
@@ -90,6 +87,7 @@ export default {
   font-size: 32px;
   margin-top: 20px;
 }
+
 .centered-image {
   display: block;
   margin: 0 auto;
