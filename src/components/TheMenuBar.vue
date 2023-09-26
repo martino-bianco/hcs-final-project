@@ -1,14 +1,13 @@
 <template>
   <div class="container">
     <div class="logo">
-      <i @click="playClickSound" class="fa-solid fa-trailer fa-xl"></i
-      ><i @click="playClickSound" class="fa-solid fa-van-shuttle fa-xl"></i>
+      <i @click="playClickSound" class="fa-solid fa-trailer fa-xl"></i>
+      <i @click="playClickSound" class="fa-solid fa-van-shuttle fa-xl"></i>
       <router-link to="/">
         <span class="blog-name">{{ $t('blogName') }}</span>
       </router-link>
     </div>
 
-    <!-- My weak Language Switcher Thingie -->
     <nav id="nav">
       <ul>
         <li class="contact">
@@ -25,11 +24,8 @@
             {{ isLoggedIn ? 'Logout' : 'Login' }}
           </button>
         </li>
-        <li class="language-switcher">
-          <select @change="changeLanguage" style="width: 100px">
-            <option value="en">English</option>
-            <option value="it">Italiano</option>
-          </select>
+        <li id="language-switcher">
+          <TheLanguageSwitcher />
         </li>
       </ul>
     </nav>
@@ -40,7 +36,12 @@
 <script>
 import carBeep from '@/assets/CarBeep.mp3'
 
+import TheLanguageSwitcher from './TheLanguageSwitcher.vue'
+
 export default {
+  components: {
+    TheLanguageSwitcher
+  },
   data() {
     return {
       isLoggedIn: false,
@@ -53,11 +54,6 @@ export default {
     },
     playClickSound() {
       this.clickSound.play()
-    },
-    changeLanguage(event) {
-      const selectedLanguage = event.target.value
-      // This should change the locale to the selected language
-      this.$i18n.locale = selectedLanguage
     }
   }
 }
@@ -87,10 +83,6 @@ export default {
   margin-right: 60px;
 }
 
-.language-switcher select {
-  font-size: 16px;
-}
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -108,5 +100,10 @@ button {
   font-size: 15px;
   min-width: 120px;
   min-height: 20px;
+}
+
+#language-switcher {
+  display: inline;
+  margin-right: 20px;
 }
 </style>

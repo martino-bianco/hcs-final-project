@@ -35,3 +35,44 @@ a {
   background-color: white;
   z-index: 2;
 }
+@keyframes spin-y {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.icon-spin-y {
+  animation: none;
+  /* Why doesn't it work? */
+  /* transition: transform 0.3s ease-in-out; */
+}
+.icon-spin-y:hover {
+  animation: spin-y 3s ease infinite;
+  animation-delay: 0.3s;
+}
+/* Define the keyframes for the wiggle animation */
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Apply the animation to the link when hovered */
+.wiggle-link:hover {
+  animation: wiggle 0.01s ease infinite;
+  animation-delay: 2s; /* Adjust the delay as needed */
+}

@@ -3,7 +3,7 @@
     <div id="wrapper">
       <div id="explanation">
         This is the final project for <br />
-        <div id="HCSContainer">
+        <div id="HCSContainer" class="wiggle-link">
           <a href="https://hamburgcodingschool.com/" target="_blank"> Hamburg Coding School </a>
         </div>
         by
@@ -12,13 +12,13 @@
       <div id="myName">Martin Dörr</div>
       <div id="theLogos">
         <a href="https://www.linkedin.com/in/martin-dörr-2971b3119" target="_blank">
-          <i class="fa-brands fa-linkedin fa-2xl"></i>
+          <i class="fa-brands fa-linkedin fa-2xl icon-spin-y"></i>
         </a>
         <a href="https://github.com/martino-bianco" target="_blank">
-          <i class="fa-brands fa-github fa-2xl"></i>
+          <i class="fa-brands fa-github fa-2xl icon-spin-y"></i>
         </a>
         <a href="mailto:martin.g.doerr@gmail.com">
-          <i class="fa-solid fa-envelope fa-2xl"></i>
+          <i class="fa-solid fa-envelope fa-2xl icon-spin-y"></i>
         </a>
       </div>
     </div>
