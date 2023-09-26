@@ -34,8 +34,7 @@ export default {
     }
   },
   async mounted() {
-    mapboxgl.accessToken =
-      'pk.eyJ1IjoibWFydGluLWJpYW5jbyIsImEiOiJjbGp2NDdlOG4xY3FiM2psbG0zMjZnOTY3In0.lGTYBbEfzfoLG_a1aHl5Zg' // Replace with your Mapbox access token
+    mapboxgl.accessToken = import.meta.env.VITE_SOME_KEY // Replace with your Mapbox access token
 
     this.map = new mapboxgl.Map({
       container: 'map',
