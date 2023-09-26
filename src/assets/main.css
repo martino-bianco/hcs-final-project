@@ -52,7 +52,7 @@ a {
   animation: spin-y 3s ease infinite;
   animation-delay: 0.3s;
 }
-/* Define the keyframes for the wiggle animation */
+
 @keyframes wiggle {
   0% {
     transform: rotate(0deg);
@@ -71,8 +71,7 @@ a {
   }
 }
 
-/* Apply the animation to the link when hovered */
 .wiggle-link:hover {
   animation: wiggle 0.01s ease infinite;
-  animation-delay: 2s; /* Adjust the delay as needed */
+  animation-delay: 2s;
 }
