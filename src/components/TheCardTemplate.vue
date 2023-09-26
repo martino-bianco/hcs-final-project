@@ -1,6 +1,6 @@
 <template>
   <router-link :to="'/post/' + travelData.id" id="TheCard" class="tilted">
-    <div class="image-container">
+    <div id="imageContainer">
       <img
         id="topImage"
         :src="travelData.image"
@@ -8,7 +8,7 @@
         style="width: 100%; height: auto"
       />
     </div>
-    <div class="card-details">
+    <div id="cardDetails">
       <h1>{{ travelData.city }}</h1>
       <h2>{{ travelData.date }}</h2>
       <div id="author">
@@ -49,20 +49,15 @@ export default {
     filter 3s;
 }
 
-/* #TheCard.tilted {
-  transform: scale(0.9) rotate(-90deg);
-} */
-
 #TheCard:hover {
-  transform: none; /* Remove the tilt effect on hover */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.image-container {
+#imageContainer {
   margin-bottom: 10px;
 }
 
-.card-details {
+#cardDetails {
   text-align: center;
   display: flex;
   flex-direction: column;

@@ -82,7 +82,7 @@ export default {
           <div id="popupContainer">
             <h3>${cityLink}</h3>
             <div>Date:<br>${entry.date}</div>
-            <div id=author>
+            <div id="author">
               <p>Author:<br>${entry.author}</p>
               <img id="headShot" src="${entry.authorpic}" alt="Author image">
             </div>
@@ -98,17 +98,17 @@ export default {
 </script>
 
 <style>
-.mapboxgl-popup-close-button {
+#mapboxgl-popup-close-button {
   display: none;
 }
 
-.mapboxgl-popup-content {
+#mapboxgl-popup-content {
   background-color: rgba(255, 255, 255, 0.8);
   width: 250px;
   border-radius: 10px;
 }
 
-.mapboxgl-popup-content h3 {
+#mapboxgl-popup-content h3 {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   margin: 0;
@@ -118,13 +118,13 @@ export default {
   margin-top: -15px;
 }
 
-.mapboxgl-popup-content h4 {
+#mapboxgl-popup-content h4 {
   margin: 0;
   padding: 10px;
   font-weight: 400;
 }
 
-.mapboxgl-popup-content div {
+#mapboxgl-popup-content div {
   padding: 10px;
 }
 

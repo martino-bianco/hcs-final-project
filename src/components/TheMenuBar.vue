@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <div class="logo">
-      <i @click="playClickSound" class="fa-solid fa-trailer fa-xl"></i>
-      <i @click="playClickSound" class="fa-solid fa-van-shuttle fa-xl"></i>
+  <div id="container">
+    <div id="logo">
+      <i @click="playClickSound" id="trailerIcon" class="fa-solid fa-trailer fa-xl"></i>
+      <i @click="playClickSound" id="shuttleIcon" class="fa-solid fa-van-shuttle fa-xl"></i>
       <router-link to="/">
-        <span class="blog-name">{{ $t('blogName') }}</span>
+        <span id="blogName" class="blog-name">{{ $t('blogName') }}</span>
       </router-link>
     </div>
 
@@ -16,13 +16,13 @@
         <li>
           <button style="width: 120px">
             <router-link to="/form">
-              <i class="fa-solid fa-plus fa-lg"></i> {{ $t('newPost') }}</router-link
-            >
+              <i id="plusIcon" class="fa-solid fa-plus fa-lg"></i> {{ $t('newPost') }}
+            </router-link>
           </button>
         </li>
         <li>
           <button @click="toggleLogin">
-            <i class="fa-solid fa-right-to-bracket fa-lg"></i>
+            <i id="loginIcon" class="fa-solid fa-right-to-bracket fa-lg"></i>
             {{ isLoggedIn ? 'Logout' : 'Login' }}
           </button>
         </li>
@@ -62,20 +62,20 @@ export default {
 </script>
 
 <style scoped>
-.container {
+#container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 
-.logo {
+#logo {
   display: flex;
   align-items: center;
   font-weight: bold;
 }
 
-.blog-name {
+#blogName {
   margin-left: 40px;
   font-size: 20px;
   font-size: 24px;
