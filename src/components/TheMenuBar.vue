@@ -15,7 +15,9 @@
         </li>
         <li>
           <button style="width: 120px">
-            <i class="fa-solid fa-plus fa-lg"></i> {{ $t('newPost') }}
+            <router-link to="/form">
+              <i class="fa-solid fa-plus fa-lg"></i> {{ $t('newPost') }}</router-link
+            >
           </button>
         </li>
         <li>

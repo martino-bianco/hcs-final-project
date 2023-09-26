@@ -21,6 +21,12 @@ const router = createRouter({
       path: '/post/:id',
       name: 'citydetails',
       component: () => import('../views/CityView.vue')
+    },
+
+    {
+      path: '/form',
+      name: 'form',
+      component: () => import('../views/FormView.vue')
     }
   ]
 })
