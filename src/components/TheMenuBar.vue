@@ -69,6 +69,10 @@ export default {
   padding: 10px;
 }
 
+#nav {
+  min-width: 600px;
+}
+
 #logo {
   display: flex;
   align-items: center;
