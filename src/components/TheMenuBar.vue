@@ -70,7 +70,7 @@ export default {
 }
 
 #nav {
-  min-width: 600px;
+  min-width: 610px;
 }
 
 #logo {
