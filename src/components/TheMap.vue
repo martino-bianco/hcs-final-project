@@ -74,7 +74,11 @@ export default {
   methods: {
     addMarkersToMap(map) {
       this.travelData.forEach((entry) => {
-        const marker = new mapboxgl.Marker().setLngLat([entry.longitude, entry.latitude]).addTo(map)
+        const marker = new mapboxgl.Marker({
+          element: this.createCustomMarkerElement(entry.image) // Use a custom marker element
+        })
+          .setLngLat([entry.longitude, entry.latitude])
+          .addTo(map)
 
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
@@ -92,6 +96,14 @@ export default {
         const popup = new mapboxgl.Popup().setHTML(popupContent)
         marker.setPopup(popup)
       })
+    },
+    createCustomMarkerElement(imageUrl) {
+      const marker = document.createElement('div')
+      marker.className = 'custom-marker'
+      marker.style.backgroundImage = `url(${imageUrl})`
+      marker.style.width = '40px'
+      marker.style.height = '40px'
+      return marker
     }
   }
 }
@@ -159,5 +171,13 @@ export default {
 
 div {
   font-size: 16px;
+}
+
+.custom-marker {
+  background-size: cover;
+  background-color: #ffffff;
+  border: 2px solid #0078d4;
+  border-radius: 50%;
+  cursor: pointer;
 }
 </style>
