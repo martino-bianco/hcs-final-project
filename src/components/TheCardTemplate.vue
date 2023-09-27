@@ -46,7 +46,7 @@ export default {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transition:
     transform 0.6s,
-    filter 3s;
+    filter 2s;
 }
 
 #TheCard:hover {

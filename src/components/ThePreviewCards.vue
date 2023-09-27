@@ -4,9 +4,9 @@
       v-for="travelObject in travelArray"
       :key="travelObject.id"
       :travelData="travelObject"
-      @mouseover="handleMouseOver(travelObject.id)"
-      @mouseout="handleMouseOut()"
-      :style="{ filter: travelObject.isHovered ? 'blur(0)' : 'blur(5px)' }"
+      @mouseover="hoveredCardId = travelObject.id"
+      @mouseout="hoveredCardId = null"
+      :style="cardStyle(travelObject.id)"
     />
   </div>
 </template>
@@ -18,24 +18,15 @@ export default {
   components: { TheCardTemplate },
   data() {
     return {
-      travelArray: []
+      travelArray: [],
+      hoveredCardId: null
     }
   },
   methods: {
-    handleMouseOver(cardId) {
-      this.travelArray.forEach((travelObject) => {
-        if (travelObject.id === cardId) {
-          travelObject.isHovered = true
-        } else {
-          travelObject.isHovered = false
-        }
-      })
-    },
-    handleMouseOut() {
-      // Set isHovered to false for all cards when mouseout
-      this.travelArray.forEach((travelObject) => {
-        travelObject.isHovered = false
-      })
+    cardStyle(cardId) {
+      return {
+        filter: this.hoveredCardId === cardId ? 'blur(0)' : 'blur(3px)'
+      }
     }
   },
   async mounted() {
@@ -47,11 +38,6 @@ export default {
       const dateB = new Date(b.date)
 
       return dateB - dateA
-    })
-
-    // Initialize isHovered property to false for all cards
-    this.travelArray.forEach((travelObject) => {
-      travelObject.isHovered = false
     })
   }
 }
