@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <div id="logo">
-      <i @click="playClickSound" id="trailerIcon" class="fa-solid fa-trailer fa-xl"></i>
+      <i id="trailerIcon" class="fa-solid fa-trailer fa-xl"></i>
       <i @click="playClickSound" id="shuttleIcon" class="fa-solid fa-van-shuttle fa-xl"></i>
       <router-link to="/">
         <span id="blogName" class="blog-name">{{ $t('blogName') }}</span>

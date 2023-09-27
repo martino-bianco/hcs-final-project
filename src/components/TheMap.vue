@@ -137,16 +137,20 @@ export default {
   border-radius: 10px;
   font-weight: 700;
   margin-top: -15px;
-}
-
-.mapboxgl-popup-content h4 {
-  margin: 0;
-  padding: 10px;
-  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .mapboxgl-popup-content div {
   padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.custom-marker {
+  background-size: cover;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 #cityLink {
@@ -158,10 +162,6 @@ export default {
   width: 100%;
   height: 550px;
   border-radius: 10px;
-}
-
-.popupContainer h3 {
-  font-size: 20px;
 }
 
 #author {
@@ -176,16 +176,5 @@ export default {
   border-radius: 50%;
   text-align: left;
   filter: grayscale(100%);
-}
-
-div {
-  font-size: 16px;
-}
-
-.custom-marker {
-  background-size: cover;
-  border: 1px solid black;
-  border-radius: 50%;
-  cursor: pointer;
 }
 </style>
