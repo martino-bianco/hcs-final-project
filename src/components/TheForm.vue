@@ -2,7 +2,7 @@
   <div id="wrapper">
     <form id="newPostForm">
       <h2>Enter a new post:</h2>
-      <h3>(sorry, still placeholder 😞)</h3>
+      <h3>(sorry, I'm just placeholder 😞)</h3>
       <label for="title">Title:</label>
       <input type="text" id="title" name="title" />
 

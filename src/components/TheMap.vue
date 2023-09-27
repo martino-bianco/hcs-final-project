@@ -14,40 +14,50 @@ export default {
       type: Number,
       default: 4.5
     },
-    center: {
-      required: false,
-      type: Array,
-      default() {
-        return [12.948895586334427, 41.966501605840534]
-      }
-    },
     initialZoom: {
       required: false,
       type: Number,
       default: 0
     }
   },
+
   data() {
     return {
       map: null,
-      initialZoomComplete: false
+      initialZoomComplete: false,
+      center: [12.948895586334427, 41.966501605840534]
     }
   },
+
+  computed: {
+    newestDateCenter() {
+      if (this.travelData.length === 0) {
+        return this.center
+      }
+
+      const newestEntry = this.travelData.reduce((prev, current) => {
+        return new Date(current.date) > new Date(prev.date) ? current : prev
+      })
+
+      return [newestEntry.longitude, newestEntry.latitude]
+    }
+  },
+
   async mounted() {
-    mapboxgl.accessToken = import.meta.env.VITE_SOME_KEY // Replace with your Mapbox access token
+    mapboxgl.accessToken = import.meta.env.VITE_SOME_KEY
 
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: this.center,
-      zoom: this.initialZoom || 0 // Use the provided initialZoom if available, otherwise, use 0
+      center: this.newestDateCenter,
+      zoom: this.initialZoom || 0
     })
 
     this.map.on('load', () => {
       if (!this.initialZoomComplete) {
         setTimeout(() => {
           this.map.flyTo({
-            center: this.center,
+            center: this.newestDateCenter,
             zoom: this.zoom,
             essential: true,
             duration: 5000
@@ -63,11 +73,6 @@ export default {
   watch: {
     travelData() {
       this.addMarkersToMap(this.map)
-    },
-    center() {
-      this.map.flyTo({
-        center: this.center
-      })
     }
   },
 
@@ -75,11 +80,12 @@ export default {
     addMarkersToMap(map) {
       this.travelData.forEach((entry) => {
         const marker = new mapboxgl.Marker({
-          element: this.createCustomMarkerElement(entry.image) // Use a custom marker element
+          element: this.createCustomMarkerElement(entry.image)
         })
           .setLngLat([entry.longitude, entry.latitude])
           .addTo(map)
 
+        // My popups:
         const cityLink = `<a id="cityLink" href="/post/${entry.id}">${entry.city}</a>`
 
         const popupContent = `
@@ -97,12 +103,15 @@ export default {
         marker.setPopup(popup)
       })
     },
+
+    // Making custom markers:
+
     createCustomMarkerElement(imageUrl) {
       const marker = document.createElement('div')
       marker.className = 'custom-marker'
       marker.style.backgroundImage = `url(${imageUrl})`
-      marker.style.width = '40px'
-      marker.style.height = '40px'
+      marker.style.width = '30px'
+      marker.style.height = '30px'
       return marker
     }
   }
@@ -175,8 +184,7 @@ div {
 
 .custom-marker {
   background-size: cover;
-  background-color: #ffffff;
-  border: 2px solid #0078d4;
+  border: 1px solid black;
   border-radius: 50%;
   cursor: pointer;
 }
