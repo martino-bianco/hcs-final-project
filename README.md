@@ -1,35 +1,15 @@
 # HCS Travel BLog 2
 
-This template should help get you started developing with Vue 3 in Vite.
+This is my final project for the [Hamburg Coding School](https://hamburgcodingschool.com/):
+Building a travel blog with focus on vue and it's usage of components.
 
-## Recommended IDE Setup
+I'm also working on a second repository which is the same project but with a working backend.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Have fun checking it out and laughing at my code. 🤓
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Thanks to everybody from HCS and my classmates for this wild ride!
+✌️
