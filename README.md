@@ -11,5 +11,5 @@ Have fun checking it out and laughing at my code. 🤓
 
 
 
-Thanks to all my teachers and classmates for this wild ride!
+Thanks to everybody from HCS and my classmates for this wild ride!
 ✌️
